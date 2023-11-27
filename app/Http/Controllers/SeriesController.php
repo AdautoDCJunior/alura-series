@@ -15,14 +15,11 @@ class SeriesController extends Controller
       'White Colar'
     ];
 
-    $http = '<ul>';
+    return view('series.index')->with('series', $series);
+  }
 
-    foreach ($series as $serie) {
-      $http .= "<li>$serie</li>";
-    }
-
-    $http .= '</ul>';
-
-    return $http;
+  public function create(Request $request)
+  {
+    return view('series.create');
   }
 }
